@@ -5,7 +5,7 @@ int sensorValue[16];
 int pressure[16];
 
 void setup() {
-  // put your setup code here, to run once:
+  // setup code here,  run once:
   Serial.begin(9600);      // open the serial port at 9600 bps:    
   for(int i=0;i<16;i++)
   {
@@ -14,17 +14,23 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // main code, run repeatedly:
   for(int i=0;i<16;i++)
   {
     sensorValue[i] = analogRead(apin[i]);
-    switch(i)
+	//transform voltage to pressure
+    /*switch(i)
     {
       case 0:
       pressure[i]=
       break;
+
+	  case 1:
+	  pressure[i] =
+	  break;
       
     }
+	*/
     Serial.print(pressure[i]);
     Serial.print('\t');
     //Serial.print(digitalRead(i));
